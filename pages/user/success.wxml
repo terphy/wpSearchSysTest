@@ -1,0 +1,40 @@
+<view class="container">
+  <view>个人中心</view>
+  <view class="info-cont">
+    <view class="infoMain">
+      <!-- 头像 -->
+      <view class="info-items" bindtap="setPhotoInfo">
+        <text>头像</text>
+        <view class="infotext">
+          <image wx:if="{{headPhoto!=null}}" class="userinfo-avatar" src="{{headPhoto}}" background-size="cover"></image>
+          <image wx:else class="userinfo-avatar" src="{{defaultUrl}}" background-size="cover"></image>
+        </view>
+      </view>
+
+      <!-- 地区 -->
+      <view class="info-items">
+        <text>地区</text>
+        <view class="infotext" style='align-items: center;'>
+          <picker bindchange='bindPickerCity' mode='region' value='{{region}}'>
+            <view>
+              {{region[0]}},{{region[1]}},{{region[2]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <!-- 身份 -->
+      <view class="info-items" bindtap="pageJump">
+        <text>认证</text>
+        <view class="infotext">
+          <view wx:if="{{!role}}">未验证</view>
+          <view wx:if="{{role=='teacher'}}">已验证(教师)</view>
+          <view wx:if="{{role=='company'}}">已验证(机构)</view>
+        </view>
+      </view>
+      <!-- 跳转主页 -->
+      <view class="info-items">
+        <text>主页</text>
+      </view>
+    </view>
+  </view>
+</view>

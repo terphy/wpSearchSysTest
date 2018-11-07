@@ -1,0 +1,110 @@
+<view class='hole'>
+  <view class='nav'>
+    <view class='logo'>
+      <image src="https://m.jiaoyubao.cn/images/LOGO.svg"></image>
+    </view>
+    <view class='search'>
+      <text>搜索</text>
+    </view>
+    <view class='searchimg'>
+      <image src="https://m.jiaoyubao.cn/images/search.png"></image>
+    </view>
+  </view>
+  <view class='body'>
+    <view class='topshow'>
+      <view class='bgc'>
+        <image src='{{bgcimgUrl}}'></image>
+      </view>
+      <view class='introduce'>
+        <text>{{introduce}}</text>
+      </view>
+    </view>
+
+    <view class='contact'>
+      <view class='left'>
+        <view class='contact-tell'>{{tell}}</view>
+        <view class='answer'>
+          xx老师接听
+        </view>
+      </view>
+      <view class='right'>
+        <view class='phone'>
+          <image src='https://m.jiaoyubao.cn/images/jigou_dh1.png'> </image>
+        </view>
+        <view class='online'>
+          <image src='https://m.jiaoyubao.cn/images/jigou_zx.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='content'>
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            {{introduce}}
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                <view class="weui-cell__bd">教学内容：</view>
+                <view class="weui-cell__ft">{{experience.category}}</view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                <view class="weui-cell__bd">工作单位：</view>
+                <view class="weui-cell__ft">{{experience.company}}</view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                <view class="weui-cell__bd">教学时长：</view>
+                <view class="weui-cell__ft">{{experience.doing_time}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+            <!-- 评论区 -->
+            <view class="weui-panel__bd" wx:for="{{commont}}">
+              <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">评论人： {{item.plr}}</view>
+                <view class="weui-media-box__desc">{{item.info}}</view>
+                <view class="weui-media-box__desc" wx:if="{{commont[index].picture}}">
+                  <image src="{{item.picture}}" class="pl  img"></image>
+                </view>
+                <view class="weui-media-box__info">
+                  <view class="weui-media-box__info__meta">评分：{{item.star}}星</view>
+                  <view class="weui-media-box__info__meta">{{item.add_time}}</view>
+                  <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">点赞数：{{item.has_use_num}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                <view class="weui-cell__bd">当前岗位</view>
+                <view class="weui-cell__ft">{{job.job}}</view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                <view class="weui-cell__bd">意向岗位</view>
+                <view class="weui-cell__ft">{{job.want_job}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='footer'></view>
+</view>

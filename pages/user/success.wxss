@@ -1,0 +1,50 @@
+/* pages/user/success.wxss */
+@import '/src/css/weui.wxss';
+.container {
+  padding:0;
+}
+.info-cont{
+  width:100%;
+  /* margin-top:10rpx;
+  border-top:solid 1px #f0f0f0;
+  display: flex; */
+  flex-direction: column;
+
+}
+.infoMain{
+    border-bottom:solid 1px #f0f0f0;
+    display: flex;
+    padding:0 30rpx;
+    flex-direction: column;
+    margin-bottom: 30rpx;
+}
+.info-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20rpx 0;
+    border-top:solid 1px #f0f0f0;
+
+}
+.infotext{
+    display: flex;
+    align-items: center;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 0 20rpx;
+  border-radius: 50%;
+}
+/* .info-motto{
+     margin: 0 20rpx;
+     color:#888;
+} */
+.buttonExit{
+    margin:0 40rpx;
+}
+
+.aaa{
+  width: 100px;
+  height: 100px
+}

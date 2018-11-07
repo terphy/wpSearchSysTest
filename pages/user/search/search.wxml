@@ -1,0 +1,50 @@
+<!--pages/user/search.wxml-->
+<view class='body'>
+  <!-- 蓝色的头部 -->
+  <view class='searchtitle'>
+    <!-- 左箭头返回 -->
+    <view bindtap='pageBack' class='arrowleft'>
+      <image src='https://m.jiaoyubao.cn/images/back_off.png' style='width:20;height:37'></image>
+    </view>
+    <!-- 搜索输入框 -->
+    <view class='searchkey'>
+      <!-- 占位滑块 -->
+      <view class='leftblank' style='width: {{width}}px;'></view>
+      <!-- 搜索图标 -->
+      <view class='searchico'></view>
+      <!-- 输入搜索关键字 -->
+      <view class='keystr'>
+        <input bindfocus='focus' bindinput='inputKey' type="text" name="keyword" growing-track="true" class="keytxt" placeholder="请输入机构名称或课程名称" value='{{searchStr}}' />
+      </view>
+      <!-- 清空输入 -->
+      <view wx:if="{{inputFocus}}" class="imgcancel" bindtap='reset'></view>
+    </view>
+    <!-- 触发搜索 -->
+    <view wx:if="{{inputFocus}}" class="sotxt" bindtap='doSearch'>搜索</view>
+  </view>
+
+  <!-- 热门搜索 -->
+  <view class="hottitle">热门搜索</view>
+  <!-- 展示热门搜索 -->
+  <view class='searitem'>
+    <view class='ul'>
+      <view class='li'  wx:for="{{hotSeach}}" wx:key="value">
+        <text bindtap='clickHotWord' id='{{item.id}}'> {{item.value}} </text >
+      </view>
+    </view>
+  </view>
+
+  <!-- 搜索历史 -->
+  <view class="hottitle">搜索历史</view>
+  <view class="historycon">
+    <view class='ul'>
+      <view class='li' wx:for="{{inputHistory}}" wx:key="value">
+        <view bindtap='clickHistory' id='{{item.id}}'> {{item.value}} </view >
+      </view>
+      <view class='li'>
+        <view bindtap='clearHistory' class="clearcon">清空历史搜索
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

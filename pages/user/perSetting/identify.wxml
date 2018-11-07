@@ -1,0 +1,165 @@
+<!-- 认证页面 -->
+<!-- 身份单选按钮 -->
+<view class='weui-cell weui-cell_input oneRow border-Bottom'>
+  <view class="weui-cell__hd">
+    <view class="weui-label">选择身份：</view>
+  </view>
+  <view class="weui-cell__bd">
+    <!-- 单选按钮 -->
+    <radio-group class="radio-group" bindchange="roleChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+</view>
+
+<!-- 教师认证表单 -->
+<form wx:if="{{role=='teacher'}}">
+  <!-- 姓名 -->
+  <view class="weui-cell weui-cell_input oneRow">
+    <view class="weui-cell__hd">
+      <view class="weui-label">姓名：</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input name='name' class="weui-input" placeholder="请输入您的姓名" bindinput='setName'></input>
+    </view>
+  </view>
+
+  <!-- 擅长分类 -->
+  <view class="weui-cell weui-cell_input weui-cell_vcode oneRow">
+    <view class="weui-cell__hd">
+      <view class="weui-label">擅长分类：</view>
+    </view>
+    <view class="weui-cell__bd">
+      <view class="section">
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+          <view class="picker">
+            {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <!-- 简介 -->
+  <view class="weui-cell weui-cell_input mulRow">
+    <view class="weui-cell__hd">
+      <view class="weui-label">个人简介：</view>
+    </view>
+    <view class="weui-cell__bd">
+      <textarea bindinput='setintroduce' class="weui-textarea" placeholder="请输入个人简介" style=" height:40px;margin-top:40px;" maxlength='{{limit}}' />
+      <view class="weui-textarea-counter">{{textCounter}}/{{limit}}</view>
+    </view>
+  </view>
+
+  <!-- 身份证 -->
+  <view class="weui-cell weui-cell_input mulRow border-Bottom">
+    <view class="weui-cell__hd">
+      <view class="weui-label">
+        <text decode='true'>身份证\n正反面：</text>
+      </view>
+    </view>
+    <view class="weui-cell__bd">
+      <view class="weui-uploader">
+        <view class="weui-uploader__bd">
+          <view class="weui-uploader__files" id="uploaderFiles">
+            <block wx:for="{{files}}" wx:key="*this">
+              <view class="weui-uploader__file" id="{{item}}">
+                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+              </view>
+            </block>
+          </view>
+          <view wx:if='{{picNum<2}}' class="weui-uploader__input-box">
+            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</form>
+
+<!-- 机构认证表单 -->
+<form wx:else>
+  <!-- 机构名 -->
+  <view class="weui-cell weui-cell_input oneRow">
+    <view class="weui-cell__hd">
+      <view class="weui-label">机构名：</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input name='name' class="weui-input" placeholder="请输入机构名称" bindinput='setName'></input>
+    </view>
+  </view>
+
+  <!-- 位置 -->
+  <view class="weui-cell weui-cell_input oneRow">
+    <view class="weui-cell__hd">
+      <view class="weui-label">机构位置：</view>
+    </view>
+    <view class="weui-cell__bd">
+      <view wx:if="{{!address}}" bindtap='chooseLocation'>
+        <input name='address' class="weui-input" disabled='true' placeholder='点击选取位置' />
+      </view>
+      <view wx:else>
+        <input name='address' class="weui-input" disabled='true' value="{{address}}" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 擅长分类 -->
+  <view class="weui-cell weui-cell_input weui-cell_vcode oneRow">
+    <view class="weui-cell__hd">
+      <view class="weui-label">擅长分类：</view>
+    </view>
+    <view class="weui-cell__bd">
+      <view class="section">
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+          <view class="picker">
+            {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <!-- 简介 -->
+  <view class="weui-cell weui-cell_input mulRow">
+    <view class="weui-cell__hd">
+      <view class="weui-label">机构简介：</view>
+    </view>
+    <view class="weui-cell__bd">
+      <textarea bindinput='setintroduce' class="weui-textarea" placeholder="请输入机构简介" style=" height:40px;margin-top:40px;" maxlength='{{limit}}' />
+      <view class="weui-textarea-counter">{{textCounter}}/{{limit}}</view>
+    </view>
+  </view>
+
+  <!-- 营业执照 -->
+  <view class="weui-cell weui-cell_input mulRow border-Bottom">
+    <view class="weui-cell__hd">
+      <view class="weui-label">
+        <text decode='true'>营业执照\n正反面：</text>
+      </view>
+    </view>
+    <view class="weui-cell__bd">
+      <view class="weui-uploader">
+        <view class="weui-uploader__bd">
+          <view class="weui-uploader__files" id="uploaderFiles">
+            <block wx:for="{{files}}" wx:key="*this">
+              <view class="weui-uploader__file" id="{{item}}">
+                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+              </view>
+            </block>
+          </view>
+          <view wx:if='{{picNum<2}}' class="weui-uploader__input-box">
+            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</form>
+
+<!-- 提交 -->
+<button class="bottom-btn" type="primary" bindtap='saveIntoDB'>提交认证</button>

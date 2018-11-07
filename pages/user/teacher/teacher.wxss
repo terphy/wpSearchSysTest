@@ -1,0 +1,98 @@
+/* pages/uesr/teacher.wxss */
+/* @import '/public/css/weui.wxss'; */
+@import '/src/css/weui.wxss';
+
+.body {
+  background-color: gray;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding:10px 20px;
+  height: 45px;
+  background-color: #1d77e5;
+}
+.nav>view {
+  height: 25px;
+}
+
+.img{
+  width: 208rpx;
+  height: 208rpx;
+  margin: 20rpx;
+}
+
+
+
+.logo image{
+  width: 40px;
+  height: 30px;
+}
+.search {
+  width:230px;
+  line-height: 25px;
+  background-color: #fff;
+  font-size: 12px;
+  color:#d3cbdb;
+  border-radius: 5px;
+  text-align: center;
+}
+.searchimg image{
+  width: 25px;
+  height: 25px;
+}
+.bgc {
+  height: 150px;
+  background-color: yellow;
+}
+.bgc>image {
+  width: 100%;
+  height: 100%;
+}
+.introduce {
+  text-align: center;
+}
+
+.contact {
+  display:flex;
+  justify-content: space-between;
+  margin-top:10px;
+  height: 30px;
+  background-color:#fff; 
+  padding:10px;
+}
+.contact .left {
+  font-size: 12px;
+  width:60%;
+}
+.left .contact-tell{
+  color:red;
+}
+.left .answer {
+  color:#d3cbdb;
+}
+.contact .right {
+  display: flex;
+  justify-content: space-evenly;
+  width: 30%;
+}
+.right>view {
+  width:30px;
+  height: 30px;
+  margin-right: 5px;
+}
+.right .online{
+  margin-right: 0;
+}
+.right image{
+  width:30px;
+  height: 30px;
+}
+.content {
+  background-color: #fff;
+}
+
+.a{font-size: 15px;color:#929292}
+.b{font-size: 16px;}
+.c{font-size: 13px;}

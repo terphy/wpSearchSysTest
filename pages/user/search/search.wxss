@@ -1,0 +1,160 @@
+/* pages/user/search.wxss */
+
+.body {
+  background: #efeff4;
+}
+
+.searchtitle {
+  height: 25px;
+  padding: 12.5px 15px;
+  background: #1184e1;
+}
+
+.arrowleft {
+  width: 10px;
+  float: left;
+  height: 25px;
+  line-height: 25px;
+  padding-top: 3px;
+  cursor: pointer;
+}
+
+.arrowleft image {
+  width: 20rpx;
+  height: 37rpx;
+}
+
+.searchkey {
+  height: 25px;
+  background: #fff;
+  border-radius: 5px;
+  width: calc(100% - 50px);
+  float: left;
+  margin-left: 15px;
+  position: relative;
+}
+
+.leftblank {
+  /* width: calc(50% - 74px); */
+  /* width: 74px; */
+  /* width: 0px; */
+  height: 25px;
+  float: left;
+  transition: all 1s ease;
+}
+
+.searchico {
+  width: 17px;
+  height: 25px;
+  float: left;
+  background: url('https://m.jiaoyubao.cn/images/search_icon.png') no-repeat 0 7px;
+  background-size: 12px 12px;
+  margin-left: 11px;
+}
+
+.keystr {
+  /* width: 43.47%;  */
+  float: left;
+  width: 132px;
+}
+
+.imgcancel {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: 6.5px;
+  top: 5.5px;
+  background: url('https://m.jiaoyubao.cn/images/search_gb.png') no-repeat 0 50%;
+  background-size: 100% 100%;
+  /* display: none; */
+  /* display: block; */
+  cursor: pointer;
+}
+
+.sotxt {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  float: right;
+  font-size: 10px;
+  color: #fff;
+  text-align: right;
+  /* display: none; */
+  cursor: pointer;
+}
+
+.keytxt {
+  height: 25px;
+  width: 100%;
+  border: 0;
+  outline: none;
+  font-size: 12px;
+  color: #666;
+  line-height: 25px;
+  display: inline-block;
+}
+
+.hottitle {
+  height: 24px;
+  line-height: 24px;
+  margin-top: 8px;
+  padding-left: 17px;
+  font-size: 14px;
+  color: #555;
+}
+
+.searitem {
+  border-bottom: #ddd 1px solid;
+}
+
+.searitem .ul {
+  overflow: hidden;
+  padding: 8px 15px 16px 15px;
+  background-color: #fff;
+}
+
+.searitem .ul .li {
+  padding: 5px;
+  float: left;
+  border: #ddd 0.5px solid;
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-top: 8px;
+  color: #666;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.hottitle {
+  height: 24px;
+  line-height: 24px;
+  margin-top: 8px;
+  padding-left: 17px;
+  font-size: 14px;
+  color: #555;
+}
+
+.historycon .ul {
+  overflow: hidden;
+  background: #fff;
+  border-bottom: #ddd 0.5px solid;
+  margin-bottom: 10px;
+}
+
+.historycon .ul .li {
+  height: 39.5px;
+  line-height: 39.5px;
+  border-bottom: #eee 0.5px solid;
+  font-size: 14px;
+  color: #000;
+  margin-left: 17px;
+  position: relative;
+  cursor: pointer;
+}
+
+.historycon .ul .li .clearcon {
+  color: #1085e0;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: none;
+}

@@ -1,0 +1,26 @@
+/* pages/user/perSetting/identify.wxss */
+@import '/src/css/weui.wxss';
+/* @import '/public/css/weui.wxss' ; */
+
+/* 一行的输入 */
+.oneRow{
+  height: 50px;
+  margin: 10px 10px;
+}
+
+/* 多行的输入 */
+.mulRow{
+  height: 94px;
+}
+
+/* 底部加边框 */
+.border-Bottom{
+  border-bottom:2px solid #f1f1f1;
+}
+
+/* 底部按钮 */
+.bottom-btn{
+  position:fixed;
+  width:100%;
+  bottom:0;
+}

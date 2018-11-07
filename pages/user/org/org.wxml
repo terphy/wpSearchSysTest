@@ -1,0 +1,80 @@
+<view class='hole'>
+  <view class='nav'>
+    <view class='logo'>
+      <image src="https://m.jiaoyubao.cn/images/LOGO.svg"></image>
+    </view>
+    <view class='search'>
+      <text>搜索</text>
+    </view>
+    <view class='searchimg'>
+      <image src="https://m.jiaoyubao.cn/images/search.png"></image>
+    </view>
+  </view>
+  <view class='body'>
+    <view class='topshow'>
+      <view class='bgc'>
+        <image src='{{bgcimgUrl}}'></image>
+      </view>
+      <view class='introduce'>
+        <text>{{introduce}}</text>
+      </view>
+    </view>
+
+    <view class='contact'>
+      <view class='left'>
+        <view class='contact-tell'>{{tell}}</view>
+        <view class='answer'>
+          xx老师接听
+        </view>
+      </view>
+      <view class='right'>
+        <view class='phone'>
+          <image src='https://m.jiaoyubao.cn/images/jigou_dh1.png'> </image>
+        </view>
+        <view class='online'>
+          <image src='https://m.jiaoyubao.cn/images/jigou_zx.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='content'>
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="width:{{sliderWidth}}px;left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            <view class=" introduce">
+              <view class=" int_left">
+                <view class="placeholder">{{head_photo}}</view>
+              </view>
+              <view class=" int_right">
+                <view class="placeholder">{{introduce}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+            <view class=" lesson">
+              <view class=" lesson_item" wx:for="{{lessons}}">
+                <image></image>
+                <text>{{index}}: {{item.kecheng_name}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+
+            <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange"
+              show-location style="width: 100%; height: {{mapheight}}px;"></map>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='footer'></view>
+</view>

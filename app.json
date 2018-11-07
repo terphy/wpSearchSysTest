@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/user/reg",
+    "pages/list/company",
+   
+    
+      "pages/user/teacher/teacher",
+   
+    "pages/user/success",
+    "pages/user/org/org",
+  
+    
+    "pages/user/perSetting/identify",
+    "pages/user/search/search",
+
+    "pages/index/index",
+    "pages/logs/logs"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}
